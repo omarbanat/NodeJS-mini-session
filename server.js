@@ -1,4 +1,6 @@
 const express = require('express');
+// Install dotenv package, to avoid putting secret key inside my code
+require('dotenv').config();
 const app = express();
 const { addUser, deleteUser } = require('./controllers/userController');
 const connectDB = require('./db/db');

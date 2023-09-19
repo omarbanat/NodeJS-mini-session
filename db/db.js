@@ -1,9 +1,8 @@
 const mongoose = require('mongoose');
+const MONGO_URL = process.env.MONGO_URL;
 
 const connectDB = () => {
-  mongoose.connect(
-    'mongodb+srv://ojbanat:nWlMsnZlakCvFqEm@cluster0.0ntwbez.mongodb.net/'
-  );
+  mongoose.connect(MONGO_URL);
   const db = mongoose.connection;
   db.on('error', console.error.bind(console, ' Connection Error'));
   db.once('open', () => {
